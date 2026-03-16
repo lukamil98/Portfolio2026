@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luka Milanovic - Utvecklarportfölj</title>
+  <meta name="description" content="Utvecklarportfölj för Luka Milanovic - Frontend Developer">
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+<nav>
+
+<h1>Luka's Portfolio</h1>
+
+<div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<ul id="nav-links">
+  <li><a href="#about">About Me</a></li>
+  <li><a href="#skills">Skills</a></li>
+  <li><a href="#projects">Projects</a></li>
+  <li><a href="#testimonials">Testimonials</a></li>
+  <li><a href="#weather">Weather</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
+  <div class="nav-phone">
+    <a href="tel:+46707901840">📞 +46 70 790 18 40</a>
+  </div>
+</nav>
+</header>
+
+<main>
+
+<section id="about">
+
+  <h2>About Me</h2>
+
+  <img src="assets/portrait.jpg" alt="Portrait of Luka Milanovic">
+
+  <p>
+    Jag är en student inom webbutveckling som är intresserad av frontend
+    utveckling och att skapa moderna och responsiva webbapplikationer.
+  </p>
+
+  <a href="assets/cv.pdf" download>Download CV</a>
+
+  <div class="social-links">
+    <a href="https://github.com/">GitHub</a>
+    <a href="#">LinkedIn</a>
+  </div>
+
+</section>
+
+
+<section id="skills">
+
+  <h2>Kunskap</h2>
+
+  <div class="skills-container">
+
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">JavaScript</div>
+    <div class="skill">Git</div>
+
+  </div>
+
+</section>
+
+
+<section id="projects">
+
+  <h2>Portfölj</h2>
+
+  <div class="projects-container">
+
+    <article class="project">
+      <h3>Travel Blog Website</h3>
+      <p>A template blog website for traveling, where I have used HTML, CSS, JavaScript and React.</p>
+      <a href="https://github.com/lukamil98/my-blog-website">GitHub</a>
+      <a href="https://goofy-hugle-0e111e.netlify.app/">Live Demo</a>
+    </article>
+
+    <article class="project">
+      <h3>To Do List App</h3>
+      <p>A simple responsive to-do list app built with HTML, CSS, and JavaScript.</p>
+      <a href="https://github.com/lukamil98/to-do-list-project">GitHub</a>
+      <a href="https://lukamil98.github.io/to-do-list-project/">Live Demo</a>
+    </article>
+
+  </div>
+
+</section>
+
+
+<section id="testimonials">
+
+  <h2>Referenser</h2>
+
+  <blockquote>
+    "Luka är en mycket motiverad student som snabbt lär sig nya teknologier."
+    <footer>Webbutveckling Lärare</footer>
+  </blockquote>
+
+</section>
+
+
+<section id="weather">
+
+  <h2>Nuvarande Väder</h2>
+
+  <p id="weather-info">Loading weather...</p>
+
+</section>
+
+
+<section id="contact">
+
+  <h2>Kontakt</h2>
+
+  <form id="contactForm">
+
+    <label for="name">Name</label>
+    <input id="name" type="text" name="name" required>
+
+    <label for="email">Email</label>
+    <input id="email" type="email" name="email" required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <button type="submit">Send</button>
+
+    <p id="form-message"></p>
+
+  </form>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <p>© 2026 Luka Milanovic</p>
+
+  <div class="footer-links">
+    <a href="https://github.com/">GitHub</a>
+    <a href="#">LinkedIn</a>
+  </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
