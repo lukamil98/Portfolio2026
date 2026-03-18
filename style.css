@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', Arial, Helvetica, sans-serif;
   line-height: 1.6;
@@ -51,12 +55,22 @@ nav {
   align-items: center;
   padding: 20px;
 }
-
-.nav-phone a{
-font-weight:600;
-text-decoration:none;
+.phone-icon {
+  width: 20px;          /* veličina ikone */
+  height: auto;          /* automatski zadrži proporcije */
+  vertical-align: middle; /* da stoji u liniji sa brojem */
+  margin-right: 6px;      /* razmak između ikone i broja */
+}
+.nav-phone a {
+  color: #c2c2c2;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;  /* možeš prilagoditi veličinu */
 }
 
+.nav-phone a:hover {
+  color: #008c93;  /* tamnija tirkizna kada hover */
+}
 
 /* Hamburger */
 .hamburger {
@@ -110,7 +124,7 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: #c2c2c2;
+  color: #f0f0f5;
 
   background: 
     linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.8)),
@@ -131,26 +145,40 @@ nav a:hover {
 #home .hero-content h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: white;
+  color: #ffffff;
 }
+
 
 #home .hero-content p {
   font-size: 1.5rem;
   margin-bottom: 2rem;
+  color: #d0d0e0; /* nežno plavičasto-siva */
+}
+#home .hero-content #name {
+  color: #00adb5;
 }
 
 #home .hero-content .btn {
   padding: 0.75rem 1.5rem;
-  background-color: #ff6f61;
-  color: white;
+  background: transparent;      /* tamna osnova */
+  color: #00adb5;           /* turkizni tekst */
+  border-radius: 25px;      /* okrugli rubovi */
+  font-weight: 600;
+  font-size: 0.95rem;
   text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
+  display: inline-block;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;             /* ukloni default border */
 }
 
 #home .hero-content .btn:hover {
-  background-color: #ff4a3d;
+     transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 173, 181, 0.4);
+  background: #000000; /* malo svetlija boja na hover */ 
 }
+
+
 
 /* Opcionalno: dodaj fade prema crnoj pozadini ispod */
 #home::after {
@@ -221,9 +249,10 @@ nav a:hover {
 }
 section {
   max-width: 1100px;
+  scroll-margin-top: 100px; /* visina headera + malo prostora */
   margin: 40px auto;
   padding: 60px 40px;
-  background: #1f1f1f;   /* sive kartice */
+  background: #1a1a1a;   /* sive kartice */
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
@@ -262,7 +291,7 @@ a:hover {
    Testimonials
 ============================ */
 blockquote {
-  background: white;
+  background: rgb(0, 0, 0);
   padding: 20px;
   border-left: 5px solid #00adb5;
   margin-top: 20px;
