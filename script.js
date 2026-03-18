@@ -34,26 +34,33 @@ form.reset();
 
 });
 
+// ============================
+// Weather za Stockholm
+// ============================
 const weatherInfo = document.getElementById("weather-info");
+const weatherIcon = document.getElementById("weather-icon");
 
-const apiKey = "669362dc1a46162b3966341d3c8201f4";
+const apiKey = "669362dc1a46162b3966341d3c8201f4"; // tvoj API ključ
+const city = "Stockholm";
 
-fetch(`https://api.openweathermap.org/data/2.5/weather?q=Stockholm&units=metric&appid=${apiKey}`)
-.then(response => response.json())
-.then(data => {
+fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`)
+  .then(response => response.json())
+  .then(data => {
+    const temp = data.main.temp;
+    const description = data.weather[0].description;
+    const iconCode = data.weather[0].icon; // kod ikone iz OpenWeatherMap
 
-const temp = data.main.temp;
-const city = data.name;
-const description = data.weather[0].description;
+    // prikaz teksta
+    weatherInfo.textContent = `${city}: ${temp}°C, ${description}`;
 
-weatherInfo.textContent = `${city}: ${temp}°C, ${description}`;
-
-})
-.catch(() => {
-
-weatherInfo.textContent = "Weather data could not be loaded";
-
-});
+    // postavljanje ikone
+    weatherIcon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+    weatherIcon.alt = description;
+  })
+  .catch(() => {
+    weatherInfo.textContent = "Weather data could not be loaded";
+    weatherIcon.src = "";
+  });
 
 const hamburger = document.getElementById("hamburger");
 const navLinks = document.getElementById("nav-links");

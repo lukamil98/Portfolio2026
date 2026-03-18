@@ -26,6 +26,8 @@ body, html {
 
 h2 {
   margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 /* ============================
@@ -44,8 +46,9 @@ header {
 }
 nav h1 {
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   letter-spacing: 1px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 nav {
   max-width: 1100px;
@@ -69,7 +72,7 @@ nav {
 }
 
 .nav-phone a:hover {
-  color: #008c93;  /* tamnija tirkizna kada hover */
+  color: #ffffff;
 }
 
 /* Hamburger */
@@ -99,15 +102,28 @@ nav ul {
 }
 
 nav a {
-  color: #c2c2c2;
+  position: relative;
   text-decoration: none;
-  font-weight: bold;
+  color: #c2c2c2
 }
 
-nav a:hover {
-  color: #00adb5;
+/* linija (skrivena u početku) */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: turquoise;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
 }
 
+/* hover efekat */
+nav a:hover::after {
+  width: 100%;
+}
 /* Hero sekcija - Home */
 #home {
   position: relative;
@@ -278,7 +294,7 @@ box-shadow:0 12px 25px rgba(0,0,0,0.15);
   color: #00adb5;
 }
 a:hover {
-  color: #008c93;
+  color: #ffffff;
 }
 .project img {
   width: 100%;
@@ -286,6 +302,19 @@ a:hover {
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 12px;
+}
+/* ============================
+   Weather Widget
+============================ */
+#weather-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#weather-icon {
+  width: 80px;  /* prilagodi veličinu */
+  height: 80px;
 }
 /* ============================
    Testimonials
@@ -363,10 +392,11 @@ display:none;
 }
 
 /* kada je meni otvoren */
+
 nav ul.active + .nav-phone{
 display:block;
 text-align:center;
-margin-top:10px;
+margin-top:10px; 
 }
 
   .hamburger {
@@ -377,7 +407,6 @@ margin-top:10px;
     flex-direction: column;
     width: 100%;
     text-align: center;
-    background: #222;
     gap: 15px;
     padding: 0;
     max-height: 0;
