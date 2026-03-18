@@ -15,7 +15,7 @@
 <header>
 <nav>
 
-<h1>Luka's Portfolio</h1>
+<h1><a href="#home">Luka's Portfolio</a></h1>
 
 <div class="hamburger" id="hamburger">
   <span></span>
@@ -53,17 +53,21 @@
 
   <h2>About Me</h2>
 
-  <img src="assets/portrait.jpg" alt="Portrait of Luka Milanovic">
+  <div class="about-wrapper">
+    <img src="assets/portrait.jpg" alt="Portrait of Luka Milanovic" class="about-img">
 
-  <p>
-   I love coding and creating web applications that are not only functional but also visually appealing. I have experience working with HTML, CSS, JavaScript, React, and C#. I am passionate about learning new technologies and continuously improving my skills as a developer.
-  </p>
+    <div class="about-text">
+      <p>
+       I love coding and creating web applications that are not only functional but also visually appealing. I have experience working with HTML, CSS, JavaScript, React, and C#. I am passionate about learning new technologies and continuously improving my skills as a developer.
+      </p>
 
-  <a href="assets/cv.pdf" download>Download CV</a>
+      <a href="assets/cv.pdf" download id="download-cv">Download CV</a>
 
-  <div class="social-links">
-    <a href="https://github.com/">GitHub</a>
-    <a href="#">LinkedIn</a>
+      <div class="social-links">
+        <a href="https://github.com/"target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/luka-milanovic-0a7b9b222/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
   </div>
 
 </section>
@@ -92,8 +96,10 @@
   <img src="assets/blog-screenshot.jpg" alt="Travel Blog Website Screenshot">
   <h3>Travel Blog Website</h3>
   <p>A template blog website for traveling, where I have used HTML, CSS, JavaScript and React.</p>
+  <div class="social-links">
   <a href="https://github.com/lukamil98/my-blog-website" target="_blank" rel="noopener noreferrer">GitHub</a>
   <a href="https://goofy-hugle-0e111e.netlify.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+</div>
 </article>
 
 <article class="project">
@@ -130,22 +136,19 @@
 
   <h2>Contact</h2>
 
-  <form id="contactForm">
+<form id="contactForm">
+  <label for="name">Name</label>
+  <input id="name" name="name" type="text" required autocomplete="name">
 
-    <label for="name">Name</label>
-    <input id="name" type="text" name="name" required>
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" required autocomplete="email">
 
-    <label for="email">Email</label>
-    <input id="email" type="email" name="email" required>
+  <label for="message">Message</label>
+  <textarea id="message" name="message" required autocomplete="off"></textarea>
 
-    <label for="message">Message</label>
-    <textarea id="message" name="message" required></textarea>
-
-    <button type="submit">Send</button>
-
-    <p id="form-message"></p>
-
-  </form>
+  <button type="submit">Send</button>
+  <p id="form-message"></p>
+</form>
 
 </section>
 
@@ -157,8 +160,8 @@
   <p>© 2026 Luka Milanovic</p>
 
   <div class="footer-links">
-    <a href="https://github.com/">GitHub</a>
-    <a href="#">LinkedIn</a>
+    <a href="https://github.com/lukamil98" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="https://www.linkedin.com/in/luka-milanovic-0a7b9b222/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
   </div>
 
 </footer>
