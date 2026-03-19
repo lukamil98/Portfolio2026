@@ -1,45 +1,59 @@
+emailjs.init("EveOERUZG2-5Tv_Mr");
 const form = document.getElementById("contactForm");
 const message = document.getElementById("form-message");
 
 form.addEventListener("submit", function(e){
+  e.preventDefault();
 
-e.preventDefault();
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const text = document.getElementById("message").value.trim();
 
-const name = document.getElementById("name").value.trim();
-const email = document.getElementById("email").value.trim();
-const text = document.getElementById("message").value.trim();
+  const nameRegex = /^[A-Za-zČĆŽŠĐčćžšđöäå\s]+$/;
 
-// REGEX za ime - dozvoljava slova, razmake i dijakritičke znakove
-const nameRegex = /^[A-Za-zČĆŽŠĐčćžšđöäå\s]+$/;
+  if(name.length < 3){
+    message.textContent = "Name must be at least 3 characters";
+    message.style.color = "red";
+    return;
+  }
 
-if(name.length < 3){
-message.textContent = "Name must be at least 3 characters";
-message.style.color = "red";
-return;
-}
+  if(!nameRegex.test(name)){
+    message.textContent = "Name must contain only letters";
+    message.style.color = "red";
+    return;
+  }
 
-if(!nameRegex.test(name)){
-message.textContent = "Name must contain only letters";
-message.style.color = "red";
-return;
-}
+  if(!email.includes("@")){
+    message.textContent = "Please enter a valid email";
+    message.style.color = "red";
+    return;
+  }
 
-if(!email.includes("@")){
-message.textContent = "Please enter a valid email";
-message.style.color = "red";
-return;
-}
+  if(text.length < 10){
+    message.textContent = "Message must be at least 10 characters";
+    message.style.color = "red";
+    return;
+  }
 
-if(text.length < 10){
-message.textContent = "Message must be at least 10 characters";
-message.style.color = "red";
-return;
-}
+  // 🔥 POČETAK EMAILJS SLANJA
+  message.textContent = "Sending...";
+  message.style.color = "black";
 
-message.textContent = "Message sent successfully!";
-message.style.color = "green";
-
-form.reset();
+  emailjs.send("service_6uemsu8", "template_hw3vtuo", {
+    from_name: name,
+    from_email: email,
+    message: text
+  })
+  .then(() => {
+    message.textContent = "Message sent successfully!";
+    message.style.color = "green";
+    form.reset();
+  })
+  .catch((error) => {
+    console.log(error);
+    message.textContent = "Failed to send message.";
+    message.style.color = "red";
+  });
 
 });
 

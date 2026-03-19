@@ -35,11 +35,11 @@ h2 {
    Header i Navbar
 ============================ */
 header {
-  position: fixed;   /* fiksan na vrhu uvek */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;    /* dovoljno visoko da prekriva sve sekcije */
+  z-index: 1000; 
   background: rgba(31,31,31,0.3); /* providna pozadina */
   color: white;
   backdrop-filter: blur(6px); /* blur efekat */
@@ -54,7 +54,7 @@ nav h1 {
 
 nav h1 a {
   text-decoration: none;
-  color: #ffffff; /* ili boja koju želiš */
+  color: #ffffff;
 }
 
 nav {
@@ -104,7 +104,7 @@ nav ul {
   display: flex;
   list-style: none;
   gap: 20px;
-  transition: max-height 0.3s ease, opacity 0.3s ease; /* animacija */
+  transition: max-height 0.3s ease, opacity 0.3s ease;
   overflow: hidden;
 }
 
