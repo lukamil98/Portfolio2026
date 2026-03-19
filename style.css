@@ -180,7 +180,7 @@ nav a:hover::after {
   margin-bottom: 2rem;
   color: #d0d0e0; /* nežno plavičasto-siva */
 }
-#home .hero-content #name {
+#home .hero-content #hero-name {
   color: #00adb5;
 }
 
