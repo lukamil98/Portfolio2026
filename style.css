@@ -518,7 +518,6 @@ margin-top:10px;
     opacity: 0;
     overflow: hidden;
     transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
-    background: rgba(31,31,31,0.95); /* pozadina za čitljivost */
     border-radius: 10px;
   }
 
