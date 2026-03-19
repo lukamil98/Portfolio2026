@@ -9,8 +9,17 @@ const name = document.getElementById("name").value.trim();
 const email = document.getElementById("email").value.trim();
 const text = document.getElementById("message").value.trim();
 
+// REGEX za ime - dozvoljava slova, razmake i dijakritičke znakove
+const nameRegex = /^[A-Za-zČĆŽŠĐčćžšđöäå\s]+$/;
+
 if(name.length < 3){
 message.textContent = "Name must be at least 3 characters";
+message.style.color = "red";
+return;
+}
+
+if(!nameRegex.test(name)){
+message.textContent = "Name must contain only letters";
 message.style.color = "red";
 return;
 }
