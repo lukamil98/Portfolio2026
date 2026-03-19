@@ -60,7 +60,7 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&ap
     const iconCode = data.weather[0].icon; // kod ikone iz OpenWeatherMap
 
     // prikaz teksta
-    weatherInfo.textContent = `${city}: ${temp}°C, ${description}`;
+    weatherInfo.textContent = `${city}: ${Math.round(temp)}°C, ${description}`;
 
     // postavljanje ikone
     weatherIcon.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
