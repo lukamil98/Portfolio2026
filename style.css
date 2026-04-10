@@ -271,6 +271,7 @@ nav a:hover::after {
 .skills-container {
   display: flex;
   flex-wrap: wrap;
+  text-align: center;
   gap: 12px;
   justify-content: center;
   margin-top: 20px;
@@ -285,6 +286,17 @@ nav a:hover::after {
   font-size: 1.3rem;
   transition: all 0.3s ease;
   cursor: default;
+}
+
+.skill img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  display: block;
+
+  /* centriranje unutar prostora */
+  padding: 2px;
+  background: transparent;
 }
 
 .skill:hover {
