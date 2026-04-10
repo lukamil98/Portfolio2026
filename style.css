@@ -290,13 +290,9 @@ nav a:hover::after {
 
 .skill img {
   width: 70px;
-  height: 70px;
-  object-fit: contain;
+  height: auto;
   display: block;
-
-  /* centriranje unutar prostora */
-  padding: 2px;
-  background: transparent;
+  margin: 0 auto;
 }
 
 .skill:hover {
